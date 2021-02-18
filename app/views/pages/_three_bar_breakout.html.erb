@@ -1,0 +1,40 @@
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">3 Bar Breakout (<%= time_now_zone_to_date %>)</h6>
+  </div>
+
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Symbol</th>
+            <th>Close</th>
+            <th>Volume</th>
+            <th>Prev Close</th>
+            <th>Prev Volume</th>
+            <th>Prev2 Close</th>
+            <th>Prev2 Volume</th>
+            <th>Prev3 Close</th>
+            <th>Prev3 Volume</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @three_bar_breakout.each do |p| %>
+            <tr>
+              <td><%= link_to p.id, stock_path(p.id) %></td>
+              <td><%= p.close %></td>
+              <td><%= p.volume %></td>
+              <td><%= p.previous_close %></td>
+              <td><%= p.previous_volume %></td>
+              <td><%= p.previous_previous_close %></td>
+              <td><%= p.previous_previous_volume %></td>
+              <td><%= p.previous_previous_previous_close %></td>
+              <td><%= p.previous_previous_previous_volume %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">WallStreetBets Reddit (<%= time_now_zone_to_date %>)</h6>
+  </div>
+
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Count</th>
+            <th>Symbol</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @mentions.each do |m| %>
+            <tr>
+              <td><%= m.count %></td>
+              <td><%= link_to "$#{m.symbol}", stock_path(m.symbol) %></td>
+              <td><%= m.name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

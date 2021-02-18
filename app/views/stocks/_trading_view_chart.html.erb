@@ -1,0 +1,40 @@
+<iframe srcdoc="
+  <style>
+      html, body {
+          height: 100%;
+          margin: 0;
+          overflow: hidden;
+      }
+      .tradingview-widget-container {
+          height: 550px;
+      }
+      .tradingview-widget-container > div:first-child {
+          height: 100%;
+      }
+  </style>
+  <!-- TradingView Widget BEGIN -->
+  <div class=&quot;tradingview-widget-container&quot;>
+    <div id=&quot;tradingview_1ecc8&quot;></div>
+    <script type=&quot;text/javascript&quot; src=&quot;https://s3.tradingview.com/tv.js&quot;></script>
+    <script type=&quot;text/javascript&quot;>
+    new TradingView.widget(
+      {
+        &quot;autosize&quot;: true,
+        &quot;symbol&quot;: &quot;<%= @stock.exchange %>:<%= @stock.symbol %>&quot;,
+        &quot;interval&quot;: &quot;5&quot;,
+        &quot;timezone&quot;: &quot;America/New_York&quot;,
+        &quot;theme&quot;: &quot;Light&quot;,
+        &quot;style&quot;: &quot;1&quot;,
+        &quot;locale&quot;: &quot;en&quot;,
+        &quot;toolbar_bg&quot;: &quot;#f1f3f6&quot;,
+        &quot;enable_publishing&quot;: false,
+        &quot;allow_symbol_change&quot;: false,
+        &quot;hide_legend&quot;: true,
+        &quot;container_id&quot;: &quot;tradingview_1ecc8&quot;
+      }
+    );
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
+  "class="tv-chart">
+</iframe>
