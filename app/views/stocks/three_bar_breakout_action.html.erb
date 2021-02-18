@@ -1,0 +1,20 @@
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">Three Bar Breatout</h1>
+</div>
+
+<div class="row">
+  <% @three_bar_breakout.each do |r| %>
+    <div class="col-lg-3 mb-4">
+      <div class="card bg-primary text-white shadow">
+        <div class="card-body">
+          <%= link_to "$#{r.symbol}", stock_path(r), class: "text-white" %>
+          <div class="text-white-50 small">
+            <%= number_with_precision(r.volume, precision: 0, delimiter: ",") %>
+            (<%= number_to_currency(r.close, precision: 4) %>)
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

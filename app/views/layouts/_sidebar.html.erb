@@ -23,12 +23,12 @@
 
   <!-- Nav Item - Pages Collapse Menu -->
   <li class="nav-item">
-    <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseTwo"
-      aria-expanded="true" aria-controls="collapseTwo">
+    <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseOne"
+      aria-expanded="true" aria-controls="collapseOne">
       <i class="fas fa-fw fa-cog"></i>
       <span>Stocks</span>
     </a>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Custom Components:</h6>
         <%= link_to "Stock List", stocks_path, class: "collapse-item" %>
@@ -37,6 +37,23 @@
     </div>
   </li>
 
+  <!-- Divider -->
+  <hr class="sidebar-divider d-none d-md-block">
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseTwo"
+      aria-expanded="true" aria-controls="collapseTwo">
+      <i class="fas fa-fw fa-chart-bar"></i>
+      <span>Reports</span>
+    </a>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header">Bullish (Penny Stocks):</h6>
+        <%= link_to "Engulfing Pattern", engulfing_pattern_action_stocks_path, class: "collapse-item" %>
+        <%= link_to "Three Bar Breatout", three_bar_breakout_action_stocks_path, class: "collapse-item" %>
+      </div>
+    </div>
+  </li>
   <!-- Divider -->
   <hr class="sidebar-divider d-none d-md-block">
 

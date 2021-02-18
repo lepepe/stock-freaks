@@ -100,8 +100,29 @@
       </div>
     </div>
 
-    <% if @stock.three_bar_breakout.present? %>
-    <% end %>
+
+    <div class="card shadow mb-4">
+      <!-- Card Header - Dropdown -->
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold text-primary">StockTwits Stream</h6>
+      </div>
+
+      <!-- Card Body -->
+      <div class="card-body wsb-reddit">
+        <% @stocktwits.each do |st| %>
+          <div class="st-divider d-flex">
+            <div class="dropdown-list-image mr-3">
+              <img class="rounded-circle" src="<%= st[:user][:avatar_url_ssl] %>" alt="">
+              <div class="status-indicator bg-success"></div>
+            </div>
+            <div class="font-weight-bold">
+            <div class="text-truncate"><%= st[:user][:username] %><span class="small pull-right"><%= time_ago_in_words(st[:created_at]) %></span></div>
+              <div class="small text-gray-500"><%= raw(st[:body]) %></div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 

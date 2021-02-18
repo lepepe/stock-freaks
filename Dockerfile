@@ -3,11 +3,11 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
   curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
   echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
   apt-get update -qq && apt-get install -y nodejs postgresql-client yarn
-WORKDIR /rails-stock
-COPY Gemfile /rails-stock/Gemfile
-COPY Gemfile.lock /rails-stock/Gemfile.lock
+WORKDIR /stock-freaks
+COPY Gemfile /stock-freaks/Gemfile
+COPY Gemfile.lock /stock-freaks/Gemfile.lock
 RUN bundle install
-COPY . /rails-stock
+COPY . /stock-freaks
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/

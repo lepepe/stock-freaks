@@ -23,12 +23,20 @@
 
 /* Tradinmg view chart */
 .tv-chart {
-    grid-area: chart;
-    width: 100%;
-    height: 550px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
-    background-color: rgb(255, 255, 255);
-    border: 0px;
-    border-radius: 3px;
+  grid-area: chart;
+  width: 100%;
+  height: 550px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  border: 0px;
+  border-radius: 3px;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.st-divider {
+  margin-bottom: 10px;
 }

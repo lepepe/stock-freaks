@@ -26,4 +26,5 @@ module StocksHelper
       SELECT min(low) FROM stock_price WHERE stock_id = #{stock_id}
     ")
   end
+
 end
